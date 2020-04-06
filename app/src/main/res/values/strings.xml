@@ -4,4 +4,12 @@
     <string name="title_explore">Explore</string>
     <string name="title_information">Info</string>
     <string name="caption_home">All you need\nis stay at home.</string>
+
+    <string-array name="country">
+        <item>Indonesia</item>
+        <item>Italy</item>
+        <item>Spain</item>
+        <item>Singapore</item>
+        <item>Malaysia</item>
+    </string-array>
 </resources>

@@ -5,10 +5,12 @@
     <color name="colorAccent">#FFC400</color>
 
     <color name="colorUnselected">#97BCE3</color>
+    <color name="colorStroke">#E5E5E5</color>
 
     <color name="backgroundPrimary">#2F78C7</color>
     <color name="backgroundGradientLeft">#1735A7</color>
     <color name="backgroundGradientRight">#307BC9</color>
+    <color name="backgroundTintArrowDown">#3382CC</color>
 
     <color name="textWhite">#FFFFFF</color>
     <color name="textBlack">#303030</color>
