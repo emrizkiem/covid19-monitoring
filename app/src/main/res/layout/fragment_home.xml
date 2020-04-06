@@ -8,6 +8,7 @@
     tools:context=".ui.home.HomeFragment">
 
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="230dp"
         android:background="@drawable/bg_gradient_primary"
@@ -22,6 +23,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="24dp"
         android:src="@drawable/illustration_home"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
