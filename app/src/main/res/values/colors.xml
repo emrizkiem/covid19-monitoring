@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#F7F7F7</color>
     <color name="colorAccent">#FFC400</color>
 
+    <color name="colorUnselected">#97BCE3</color>
+
     <color name="backgroundPrimary">#2F78C7</color>
     <color name="backgroundGradientLeft">#1735A7</color>
     <color name="backgroundGradientRight">#307BC9</color>
