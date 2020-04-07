@@ -5,13 +5,4 @@
     <string name="title_information">Info</string>
     <string name="caption_home">All you need\nis stay at home.</string>
     <string name="custom_spinner">Indonesia</string>
-    <string name="icon_place">Icon Place</string>
-
-    <string-array name="country">
-        <item>Indonesia</item>
-        <item>Italy</item>
-        <item>Spain</item>
-        <item>Singapore</item>
-        <item>Malaysia</item>
-    </string-array>
 </resources>
