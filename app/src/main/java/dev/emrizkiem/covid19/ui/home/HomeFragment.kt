@@ -4,12 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import dev.emrizkiem.covid19.R
+import dev.emrizkiem.covid19.util.CustomSpinnerAdapter
 
 class HomeFragment : Fragment() {
 
@@ -23,10 +26,17 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-    }
+        val listItemText = arrayOf("Indonesia", "Italy", "Singapore", "Malaysia", "Spain", "Japan")
+
+        var spinnerAdapter: CustomSpinnerAdapter = CustomSpinnerAdapter(context!!, listItemText)
+        var spinner: Spinner = view.findViewById(R.id.spinner) as Spinner
+        spinner.adapter = spinnerAdapter
 
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
     }
+
+private operator fun AdapterView.OnItemSelectedListener?.invoke(any: Any) {
+    TODO("Not yet implemented")
+}
+
 }
