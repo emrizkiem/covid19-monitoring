@@ -12,4 +12,8 @@
     <string name="text_h1_home">Case Update</string>
     <string name="text_h2_home">Top on the statistic on the below for\nmore information</string>
     <string name="text_h3_home">Data source: https://covid19.mathdro.id/api/</string>
+
+    <string name="statistic_confirmed">Confirmed</string>
+    <string name="statistic_death">Deaths</string>
+    <string name="statistic_recovered">Recovered</string>
 </resources>
