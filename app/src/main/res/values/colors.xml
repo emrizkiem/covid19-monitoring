@@ -12,8 +12,8 @@
     <color name="backgroundGradientRight">#307BC9</color>
     <color name="backgroundTintArrowDown">#3382CC</color>
     <color name="backgroundConfirmed">#FFBA95</color>
-    <color name="backgroundDeath">#FF6E6E</color>
-    <color name="backgroundRecovered">#62E959</color>
+    <color name="backgroundDeath">#FC9494</color>
+    <color name="backgroundRecovered">#9BFA95</color>
 
     <color name="textWhite">#FFFFFF</color>
     <color name="textBlack">#303030</color>
