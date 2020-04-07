@@ -11,11 +11,14 @@
     <color name="backgroundGradientLeft">#1735A7</color>
     <color name="backgroundGradientRight">#307BC9</color>
     <color name="backgroundTintArrowDown">#3382CC</color>
+    <color name="backgroundConfirmed">#FFBA95</color>
+    <color name="backgroundDeath">#FF6E6E</color>
+    <color name="backgroundRecovered">#62E959</color>
 
     <color name="textWhite">#FFFFFF</color>
     <color name="textBlack">#303030</color>
     <color name="textGray">#959595</color>
-    <color name="textInfected">#FF8748</color>
+    <color name="textConfirmed">#FF8748</color>
     <color name="textDeath">#FF4848</color>
     <color name="textRecovered">#36C12C</color>
 </resources>
