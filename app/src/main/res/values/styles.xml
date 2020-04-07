@@ -20,7 +20,7 @@
         <item name="android:windowAnimationStyle">@null</item>
         <item name="homeAsUpIndicator">@drawable/ic_arrow_back_white</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:fontFamily">@font/open_sans</item>
     </style>
 
 </resources>

@@ -1,8 +1,15 @@
 <resources>
     <string name="app_name">Covid19</string>
+
     <string name="title_dashboard">Home</string>
     <string name="title_explore">Explore</string>
     <string name="title_information">Info</string>
+
     <string name="caption_home">All you need\nis stay at home.</string>
-    <string name="custom_spinner">Indonesia</string>
+    <string name="caption_explore">Explore news\nAbout Covid-19</string>
+    <string name="caption_info">Get to know\nAbout Covid-19</string>
+
+    <string name="text_h1_home">Case Update</string>
+    <string name="text_h2_home">Top on the statistic on the below for\nmore information</string>
+    <string name="text_h3_home">Data source: https://covid19.mathdro.id/api/</string>
 </resources>
