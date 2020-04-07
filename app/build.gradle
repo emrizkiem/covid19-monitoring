@@ -15,6 +15,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        buildConfigField "String", "BASE_URL_STATISTIC", "\"https://covid19.mathdro.id/\""
         vectorDrawables.useSupportLibrary = true
     }
 
