@@ -1,4 +1,4 @@
-package dev.emrizkiem.covid19
+package dev.emrizkiem.covid19.ui.main
 
 import android.os.Bundle
 import android.util.Log
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
+import dev.emrizkiem.covid19.R
 import dev.emrizkiem.covid19.ui.explore.ExploreFragment
 import dev.emrizkiem.covid19.ui.home.HomeFragment
 import dev.emrizkiem.covid19.ui.information.InformationFragment
