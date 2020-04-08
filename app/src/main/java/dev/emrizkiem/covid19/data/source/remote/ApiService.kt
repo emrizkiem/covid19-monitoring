@@ -6,7 +6,7 @@ import dev.emrizkiem.covid19.data.model.home.CovidOverview
 import retrofit2.Call
 import retrofit2.http.GET
 
-interface ApiInterface {
+interface ApiService {
     @GET("api")
     fun overview(): Call<CovidOverview>
 
