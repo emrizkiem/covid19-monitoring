@@ -14,18 +14,9 @@ class InformationFragment : Fragment() {
 
     private lateinit var notificationsViewModel: InformationViewModel
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        notificationsViewModel =
-                ViewModelProviders.of(this).get(InformationViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_information, container, false)
-        val textView: TextView = root.findViewById(R.id.text_notifications)
-        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
+        return inflater.inflate(R.layout.fragment_information, container, false)
     }
 }
