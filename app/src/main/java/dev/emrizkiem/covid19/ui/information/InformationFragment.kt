@@ -1,4 +1,4 @@
-package dev.emrizkiem.covid19.ui.dashboard
+package dev.emrizkiem.covid19.ui.information
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import dev.emrizkiem.covid19.R
 
-class DashboardFragment : Fragment() {
+class InformationFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var notificationsViewModel: InformationViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
+        notificationsViewModel =
+                ViewModelProviders.of(this).get(InformationViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_information, container, false)
+        val textView: TextView = root.findViewById(R.id.text_notifications)
+        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
