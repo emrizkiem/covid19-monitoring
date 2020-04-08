@@ -16,4 +16,6 @@
     <string name="statistic_confirmed">Confirmed</string>
     <string name="statistic_death">Deaths</string>
     <string name="statistic_recovered">Recovered</string>
+
+    <string name="text_h1_explore">Top Headlines</string>
 </resources>
