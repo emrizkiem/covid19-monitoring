@@ -1,4 +1,4 @@
-package dev.emrizkiem.covid19.data.model
+package dev.emrizkiem.covid19.data.model.home
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

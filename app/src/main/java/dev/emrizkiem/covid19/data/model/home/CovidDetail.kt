@@ -1,4 +1,4 @@
-package dev.emrizkiem.covid19.data.model
+package dev.emrizkiem.covid19.data.model.home
 
 import android.os.Parcelable
 import com.google.gson.annotations.Expose
