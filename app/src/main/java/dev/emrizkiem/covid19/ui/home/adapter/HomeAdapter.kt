@@ -20,7 +20,7 @@ class HomeAdapter(private val data: List<Any>): RecyclerView.Adapter<RecyclerVie
     }
 
     override fun getItemViewType(position: Int): Int {
-        //@Suppress("DUPLICATE_LABEL_IN_WHEN")
+        @Suppress("DUPLICATE_LABEL_IN_WHEN")
         return when(data[position]) {
             is String -> ITEM_CONFIRMED
             is String -> ITEM_DEATH
