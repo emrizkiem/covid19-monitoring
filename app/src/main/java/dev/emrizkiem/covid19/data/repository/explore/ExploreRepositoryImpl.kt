@@ -7,6 +7,6 @@ import retrofit2.Response
 
 class ExploreRepositoryImpl(private val apiService: ApiService): ExploreRepository {
     override suspend fun getExplore(): Response<ExploreResponse> {
-        return apiService.explore("corona", BuildConfig.API_KEY, "id")
+        return apiService.explore("COVID", BuildConfig.API_KEY, "id")
     }
 }

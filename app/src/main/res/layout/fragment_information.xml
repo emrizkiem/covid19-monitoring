@@ -18,20 +18,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="250dp"
-        android:layout_height="204dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="128dp"
+        android:layout_width="228dp"
+        android:layout_height="211dp"
+        android:layout_marginTop="19dp"
         android:src="@drawable/illustration_info"
-        app:layout_constraintEnd_toEndOf="@+id/appCompatTextView"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/appCompatTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="32dp"
         android:fontFamily="@font/open_sans_bold"
         android:text="@string/caption_info"
         android:textColor="@color/textWhite"
