@@ -40,6 +40,7 @@ class ExploreFragment : Fragment() {
                 val customTabsIntent = builder.build()
                 customTabsIntent.launchUrl(context, Uri.parse(it.url))
             }
+            rv_explore.hasFixedSize()
             rv_explore.layoutManager = LinearLayoutManager(context)
             rv_explore.adapter = adapter
             observeViewModel()
