@@ -18,4 +18,7 @@
     <string name="statistic_recovered">Recovered</string>
 
     <string name="text_h1_explore">Top Headlines</string>
+
+    <string name="text_h1_info">Symptoms</string>
+    <string name="text_h2_info">Prevention</string>
 </resources>

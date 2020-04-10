@@ -7,18 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import dev.emrizkiem.covid19.R
-import dev.emrizkiem.covid19.ui.home.adapter.HomeAdapter
-import dev.emrizkiem.covid19.util.DataDummy
 import dev.emrizkiem.covid19.util.Number
-import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.item_confirmed.*
 
 class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
-    private var menuData = listOf<Any>()
 
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?): View? {
@@ -29,12 +23,9 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        menuData = DataDummy.dataDummy
-        val homeAdapter = HomeAdapter(menuData)
-
-        rv_statistic.hasFixedSize()
-        rv_statistic.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
-        rv_statistic.adapter = homeAdapter
+//        rv_statistic.hasFixedSize()
+//        rv_statistic.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
+//        rv_statistic.adapter = homeAdapter
     }
 
     private fun startNumberChangeAnimator(finalValue: Int?, view: TextView) {
