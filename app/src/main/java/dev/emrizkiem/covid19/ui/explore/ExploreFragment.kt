@@ -49,7 +49,9 @@ class ExploreFragment : Fragment() {
 
     @SuppressLint("FragmentLiveDataObserve")
     private fun observeViewModel() {
-        exploreViewModel.state.observe(this, Observer {  })
+        exploreViewModel.state.observe(this, Observer {
+//            swipeRefresh.isRefreshing = it
+        })
         exploreViewModel.explore.observe(this, Observer {
             it?.let {
                 listExplore.clear()
