@@ -26,7 +26,7 @@ class ExploreViewModel(private val useCase: ExploreUseCase) : ViewModel() {
         getExplore()
     }
 
-    private fun getExplore() {
+    fun getExplore() {
         _state.value = true
         viewModelScope.launch(Dispatchers.Main) {
             val response = withContext(Dispatchers.IO) {
