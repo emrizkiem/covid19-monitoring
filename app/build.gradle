@@ -93,6 +93,9 @@ dependencies {
     // Multidex
     implementation 'androidx.multidex:multidex:2.0.1'
 
+    // Swipe refresh layout
+    implementation 'com.github.Jamshid-M:IGRefreshLayout:1.0.3'
+
     // Chip bottom navigation
     implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.3.0'
 

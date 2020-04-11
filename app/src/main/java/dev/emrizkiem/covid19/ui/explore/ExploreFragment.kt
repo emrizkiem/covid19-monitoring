@@ -3,6 +3,7 @@ package dev.emrizkiem.covid19.ui.explore
 import android.annotation.SuppressLint
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +19,7 @@ import dev.emrizkiem.covid19.ui.explore.adapter.ExploreAdapter
 import kotlinx.android.synthetic.main.fragment_explore.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import uz.jamshid.library.progress_bar.CircleProgressBar
 
 class ExploreFragment : Fragment() {
 
@@ -40,9 +42,13 @@ class ExploreFragment : Fragment() {
                 val customTabsIntent = builder.build()
                 customTabsIntent.launchUrl(context, Uri.parse(it.url))
             }
-            swipeRefresh.setOnRefreshListener {
-                exploreViewModel.getExplore()
+            swipeRefresh.setRefreshListener {
+                Handler().postDelayed({
+                    exploreViewModel.getExplore()
+                }, 3000)
             }
+            context?.let { CircleProgressBar(it) }?.let { swipeRefresh.setCustomBar(it) }
+
             rv_explore.setHasFixedSize(true)
             rv_explore.layoutManager = LinearLayoutManager(context)
             rv_explore.adapter = adapter
@@ -53,7 +59,7 @@ class ExploreFragment : Fragment() {
     @SuppressLint("FragmentLiveDataObserve")
     private fun observeViewModel() {
         exploreViewModel.state.observe(this, Observer {
-            swipeRefresh.isRefreshing = it
+            swipeRefresh.setRefreshing(it)
         })
         exploreViewModel.explore.observe(this, Observer {
             it?.let {

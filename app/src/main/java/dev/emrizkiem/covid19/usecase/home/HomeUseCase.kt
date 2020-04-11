@@ -6,18 +6,18 @@ import dev.emrizkiem.covid19.util.ResultState
 import dev.emrizkiem.covid19.util.fetchState
 
 class HomeUseCase(private val repository: HomeRepository) {
-    suspend fun getOverview(): ResultState<CovidOverviewItem> {
-        return fetchState {
-            val response = repository.getOverview()
-
-            when(response.code()) {
-                200 -> {
-                    ResultState.Success(response.body()?.confirmed)
-                }
-                else -> {
-                    ResultState.Error(response.message())
-                }
-            }
-        }
-    }
+//    suspend fun getOverview(): ResultState<CovidOverviewItem> {
+//        return fetchState {
+//            val response = repository.getOverview()
+//
+//            when(response.code()) {
+//                200 -> {
+//                    ResultState.Success(response.body()?.confirmed)
+//                }
+//                else -> {
+//                    ResultState.Error(response.message())
+//                }
+//            }
+//        }
+//    }
 }
