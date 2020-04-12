@@ -21,4 +21,6 @@
 
     <string name="text_h1_info">Symptoms</string>
     <string name="text_h2_info">Prevention</string>
+    <string name="text_h3_info">Feel you have symptoms?</string>
+    <string name="desc">Symptoms may appear\n2–14 days after exposure</string>
 </resources>
