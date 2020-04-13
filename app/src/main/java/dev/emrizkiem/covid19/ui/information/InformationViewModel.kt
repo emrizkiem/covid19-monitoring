@@ -26,7 +26,7 @@ class InformationViewModel(private val useCase: InfoUseCase) : ViewModel() {
         getSymptoms()
     }
 
-    private fun getSymptoms() {
+    fun getSymptoms() {
         _state.value = true
         viewModelScope.launch(Dispatchers.Main) {
             val response = withContext(Dispatchers.IO) {

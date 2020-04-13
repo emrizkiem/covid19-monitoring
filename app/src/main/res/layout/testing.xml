@@ -8,7 +8,7 @@
     tools:context=".ui.explore.ExploreFragment">
 
     <uz.jamshid.library.IGRefreshLayout
-        android:id="@+id/swipeRefreshInfo"
+        android:id="@+id/swipeRefresh"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:offsetTop="120"
