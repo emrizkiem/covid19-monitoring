@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -54,7 +56,7 @@ class InformationFragment : Fragment() {
     @SuppressLint("FragmentLiveDataObserve")
     private fun observeViewModel() {
         viewModel.state.observe(this, Observer {
-            swipeRefreshInfo.setRefreshing(it)
+            swipeRefreshInfo.setRefreshing(false)
         })
         viewModel.symptoms.observe(this, Observer {
             it.let {

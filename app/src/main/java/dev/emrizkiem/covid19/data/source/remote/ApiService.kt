@@ -3,6 +3,7 @@ package dev.emrizkiem.covid19.data.source.remote
 import dev.emrizkiem.covid19.data.model.explore.ExploreResponse
 import dev.emrizkiem.covid19.data.model.home.CovidDetail
 import dev.emrizkiem.covid19.data.model.home.CovidOverviewResponse
+import dev.emrizkiem.covid19.data.model.info.PreventionResponse
 import dev.emrizkiem.covid19.data.model.info.SymptomsResponse
 import retrofit2.Call
 import retrofit2.Response
@@ -31,4 +32,7 @@ interface ApiService {
 
     @GET("http://www.mocky.io/v2/5e9256983100002a00462c5f")
     suspend fun symptoms(): Response<SymptomsResponse>
+
+    @GET("http://www.mocky.io/v2/5e95e10b2f000068780255df")
+    suspend fun prevention(): Response<PreventionResponse>
 }
