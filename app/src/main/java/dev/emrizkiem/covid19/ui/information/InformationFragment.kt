@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.emrizkiem.covid19.R
+import dev.emrizkiem.covid19.data.model.info.Prevention
 import dev.emrizkiem.covid19.data.model.info.Symptoms
 import dev.emrizkiem.covid19.ui.information.adapter.InformationAdapter
 import kotlinx.android.synthetic.main.fragment_explore.*
@@ -27,6 +28,7 @@ class InformationFragment : Fragment() {
 
     private val viewModel: InformationViewModel by viewModel()
     private val listSymptoms: MutableList<Symptoms> = mutableListOf()
+    private val listPrevention: MutableList<Prevention> = mutableListOf()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?): View? {
@@ -49,6 +51,11 @@ class InformationFragment : Fragment() {
             rv_symptoms.setHasFixedSize(true)
             rv_symptoms.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             rv_symptoms.adapter = adapter
+
+            adapter = InformationAdapter(listPrevention)
+            rv_prevention.setHasFixedSize(true)
+            rv_prevention.layoutManager = LinearLayoutManager(context)
+            rv_prevention.adapter = adapter
             observeViewModel()
         }
     }
@@ -62,6 +69,13 @@ class InformationFragment : Fragment() {
             it.let {
                 listSymptoms.clear()
                 listSymptoms.addAll(it)
+                adapter.notifyDataSetChanged()
+            }
+        })
+        viewModel.prevention.observe(this, Observer {
+            it.let {
+                listPrevention.clear()
+                listPrevention.addAll(it)
                 adapter.notifyDataSetChanged()
             }
         })

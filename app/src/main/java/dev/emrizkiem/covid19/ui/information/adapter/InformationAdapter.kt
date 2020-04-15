@@ -6,32 +6,53 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import dev.emrizkiem.covid19.R
+import dev.emrizkiem.covid19.data.model.info.Prevention
 import dev.emrizkiem.covid19.data.model.info.Symptoms
+import dev.emrizkiem.covid19.ui.information.viewholder.PreventionViewHolder
+import dev.emrizkiem.covid19.ui.information.viewholder.SymptomsViewHolder
 import kotlinx.android.synthetic.main.item_symptoms.view.*
+import java.lang.IllegalArgumentException
 
 class InformationAdapter(
-    private val data: List<Symptoms>
-): RecyclerView.Adapter<InformationAdapter.ViewHolder>() {
+    private val data: List<Any>
+): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
-        ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_symptoms, parent, false))
-
-    override fun getItemCount(): Int = data.size
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(data[position])
-    }
-
-    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        fun bind(item: Symptoms) {
-            with(itemView) {
-                text_symptoms.text = item.name
-
-                Glide.with(itemView.context)
-                    .load(item.icon)
-                    .into(icon_symptoms)
-            }
+    override fun getItemViewType(position: Int): Int {
+        return when (data[position]) {
+            is Symptoms -> ITEM_SYMPTOMS
+            is Prevention -> ITEM_PREVENTION
+            else -> throw IllegalArgumentException("Undefined view type")
         }
     }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return when (viewType) {
+            ITEM_SYMPTOMS -> SymptomsViewHolder(parent.inflate(R.layout.item_symptoms))
+            ITEM_PREVENTION -> PreventionViewHolder(parent.inflate(R.layout.item_prevention))
+            else -> throw IllegalArgumentException("Undefined view type")
+        }
+    }
+
+    override fun getItemCount() = data.size
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (holder.itemViewType) {
+            ITEM_SYMPTOMS -> {
+                val symptomsViewHolder = holder as SymptomsViewHolder
+                symptomsViewHolder.bind(data[position] as Symptoms)
+            }
+            ITEM_PREVENTION -> {
+                val preventionViewHolder = holder as PreventionViewHolder
+                preventionViewHolder.bind(data[position] as Prevention)
+            }
+            else -> throw IllegalArgumentException("Undefined view type")
+        }
+    }
+
+    companion object {
+        private const val ITEM_SYMPTOMS = 0
+        private const val ITEM_PREVENTION = 1
+    }
 }
+
+fun ViewGroup.inflate(resource: Int) = LayoutInflater.from(context).inflate(resource, this, false) as View

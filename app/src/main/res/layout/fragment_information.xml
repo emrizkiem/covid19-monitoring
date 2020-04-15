@@ -140,6 +140,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/text_prevention"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -150,6 +151,14 @@
                         android:textSize="18sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_prevention"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/text_prevention"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
