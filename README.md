@@ -35,6 +35,3 @@ This repository is simple covid19 data monitoring.
    See the License for the specific language governing permissions and
    limitations under the License.
 ```
-
-### Contributing
-Just make pull request. You are in!
