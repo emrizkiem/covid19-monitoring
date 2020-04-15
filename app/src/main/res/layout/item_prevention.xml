@@ -19,38 +19,41 @@
             android:layout_width="174dp"
             android:layout_height="156dp"
             android:scaleType="fitXY"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            tools:src="@drawable/icon_mask" />
 
         <TextView
             android:id="@+id/text_title_prevention"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
             android:ellipsize="end"
-            android:maxLines="1"
+            android:gravity="start"
             android:fontFamily="@font/open_sans_bold"
             android:textColor="@color/textBlack"
-            android:textSize="18sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/icon_prevention"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Washing your hands" />
 
         <TextView
             android:id="@+id/text_description_prevention"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:ellipsize="end"
-            android:maxLines="4"
             android:fontFamily="@font/open_sans_light"
+            android:gravity="start"
             android:textColor="@color/textBlack"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/icon_prevention"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/text_title_prevention"
+            app:layout_constraintStart_toStartOf="@+id/text_title_prevention"
             app:layout_constraintTop_toBottomOf="@+id/text_title_prevention"
             tools:text="Regularly and throughly clean your\nhands with an alcohol - based hand rub\nor wash them with soap and water." />
 
