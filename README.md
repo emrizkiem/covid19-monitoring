@@ -1,9 +1,23 @@
 # Covid19
 This repository is simple covid19 data monitoring.
 
+![alt text](https://cdn.dribbble.com/users/3220087/screenshots/11058694/media/1351c5719f2550966062dc49e43dcd92.png)
+
 #### Sumber data : 
 - https://covid19.mathdro.id/api/
 - https://newsapi.org/v2/
+
+### Tech Stack
+1. MVVM
+2. Livedata
+3. Repository
+4. Coroutines
+5. Koin
+6. Retrofit
+7. Glide
+8. Customtabs
+9. Multidex
+10. Chip navigation bar
 
 ### License
 ```
