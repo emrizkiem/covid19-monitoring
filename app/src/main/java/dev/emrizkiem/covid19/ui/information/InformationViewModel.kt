@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.emrizkiem.covid19.data.model.info.Prevention
 import dev.emrizkiem.covid19.data.model.info.Symptoms
-import dev.emrizkiem.covid19.usecase.info.InfoUseCase
+import dev.emrizkiem.covid19.domain.info.InfoUseCase
 import dev.emrizkiem.covid19.util.ResultState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

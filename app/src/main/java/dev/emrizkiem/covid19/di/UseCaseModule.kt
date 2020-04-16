@@ -1,8 +1,8 @@
 package dev.emrizkiem.covid19.di
 
-import dev.emrizkiem.covid19.usecase.explore.ExploreUseCase
-import dev.emrizkiem.covid19.usecase.home.HomeUseCase
-import dev.emrizkiem.covid19.usecase.info.InfoUseCase
+import dev.emrizkiem.covid19.domain.explore.ExploreUseCase
+import dev.emrizkiem.covid19.domain.home.HomeUseCase
+import dev.emrizkiem.covid19.domain.info.InfoUseCase
 import org.koin.dsl.module
 
 fun useCaseModule() = module {

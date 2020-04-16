@@ -1,4 +1,4 @@
-package dev.emrizkiem.covid19.usecase.info
+package dev.emrizkiem.covid19.domain.info
 
 import dev.emrizkiem.covid19.data.model.info.Prevention
 import dev.emrizkiem.covid19.data.model.info.Symptoms

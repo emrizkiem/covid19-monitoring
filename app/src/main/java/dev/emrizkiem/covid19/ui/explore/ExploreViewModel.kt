@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.emrizkiem.covid19.data.model.explore.ArticlesItem
-import dev.emrizkiem.covid19.usecase.explore.ExploreUseCase
+import dev.emrizkiem.covid19.domain.explore.ExploreUseCase
 import dev.emrizkiem.covid19.util.ResultState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

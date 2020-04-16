@@ -1,4 +1,4 @@
-package dev.emrizkiem.covid19.usecase.explore
+package dev.emrizkiem.covid19.domain.explore
 
 import dev.emrizkiem.covid19.data.model.explore.ArticlesItem
 import dev.emrizkiem.covid19.data.repository.explore.ExploreRepository
