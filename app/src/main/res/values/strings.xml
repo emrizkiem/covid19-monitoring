@@ -23,4 +23,7 @@
     <string name="text_h2_info">Prevention</string>
     <string name="text_h3_info">Feel you have symptoms?</string>
     <string name="desc">Symptoms may appear\n2–14 days after exposure</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

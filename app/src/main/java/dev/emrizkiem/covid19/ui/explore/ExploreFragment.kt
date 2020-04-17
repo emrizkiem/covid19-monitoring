@@ -52,6 +52,7 @@ class ExploreFragment : Fragment() {
             rv_explore.setHasFixedSize(true)
             rv_explore.layoutManager = LinearLayoutManager(context)
             rv_explore.adapter = adapter
+            rv_explore.visibility = View.VISIBLE
             observeViewModel()
         }
     }
@@ -60,16 +61,30 @@ class ExploreFragment : Fragment() {
     private fun observeViewModel() {
         exploreViewModel.state.observe(this, Observer {
             swipeRefresh.setRefreshing(false)
+            shimmerExplore.startShimmer()
         })
         exploreViewModel.explore.observe(this, Observer {
             it?.let {
                 listExplore.clear()
                 listExplore.addAll(it)
                 adapter.notifyDataSetChanged()
+                shimmerExplore.stopShimmer()
+                shimmerExplore.visibility = View.GONE
             }
         })
         exploreViewModel.error.observe(this, Observer {
             Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+            shimmerExplore.visibility = View.GONE
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        shimmerExplore.startShimmer()
+    }
+
+    override fun onPause() {
+        shimmerExplore.stopShimmer()
+        super.onPause()
     }
 }
