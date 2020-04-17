@@ -107,6 +107,7 @@
             android:gravity="bottom">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/layout_confirmed"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -171,6 +172,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/layout_recovered"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -235,6 +237,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/layout_death"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"

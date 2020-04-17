@@ -1,7 +1,7 @@
 package dev.emrizkiem.covid19.ui.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import dev.emrizkiem.covid19.R
 
 class DetailActivity : AppCompatActivity() {
