@@ -88,13 +88,13 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <include layout="@layout/item_loading"/>
+                        <include layout="@layout/item_loading_explore"/>
 
-                        <include layout="@layout/item_loading"/>
+                        <include layout="@layout/item_loading_explore"/>
 
-                        <include layout="@layout/item_loading"/>
+                        <include layout="@layout/item_loading_explore"/>
 
-                        <include layout="@layout/item_loading"/>
+                        <include layout="@layout/item_loading_explore"/>
 
                     </LinearLayout>
 
