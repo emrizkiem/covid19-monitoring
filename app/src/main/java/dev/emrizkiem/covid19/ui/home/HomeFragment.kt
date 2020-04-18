@@ -34,52 +34,52 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if (activity != null) {
-            layout_confirmed.setOnClickListener {
-                activity?.let {
-                    val intent = Intent(it, DetailActivity::class.java)
-                    it.startActivity(intent)
-                }
-            }
+//            layout_confirmed.setOnClickListener {
+//                activity?.let {
+//                    val intent = Intent(it, DetailActivity::class.java)
+//                    it.startActivity(intent)
+//                }
+//            }
 
-            observeViewModel()
+//            observeViewModel()
         }
     }
 
-    @SuppressLint("FragmentLiveDataObserve")
-    private fun observeViewModel() {
-        homeViewModel.state.observe(this, Observer {
+//    @SuppressLint("FragmentLiveDataObserve")
+//    private fun observeViewModel() {
+//        homeViewModel.state.observe(this, Observer {
+//
+//        })
+//        homeViewModel.confirmed.observe(this, Observer {
+//            it?.let { renderConfirmed(it) }
+//        })
+//        homeViewModel.recovered.observe(this, Observer {
+//            it?.let { renderRecovered(it) }
+//        })
+//        homeViewModel.death.observe(this, Observer {
+//            it?.let { renderDeath(it) }
+//        })
+//        homeViewModel.error.observe(this, Observer {
+//            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+//        })
+//    }
 
-        })
-        homeViewModel.confirmed.observe(this, Observer {
-            it?.let { renderConfirmed(it) }
-        })
-        homeViewModel.recovered.observe(this, Observer {
-            it?.let { renderRecovered(it) }
-        })
-        homeViewModel.death.observe(this, Observer {
-            it?.let { renderDeath(it) }
-        })
-        homeViewModel.error.observe(this, Observer {
-            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
-        })
-    }
+//    private fun renderConfirmed(overview: CovidOverview) {
+//        text_confirmed.text = overview.value.toString()
+//    }
+//
+//    private fun renderRecovered(overview: CovidOverview) {
+//        text_recovered.text = overview.value.toString()
+//    }
+//
+//    private fun renderDeath(overview: CovidOverview) {
+//        text_death.text = overview.value.toString()
+//    }
 
-    private fun renderConfirmed(overview: CovidOverview) {
-        text_confirmed.text = overview.value.toString()
-    }
-
-    private fun renderRecovered(overview: CovidOverview) {
-        text_recovered.text = overview.value.toString()
-    }
-
-    private fun renderDeath(overview: CovidOverview) {
-        text_death.text = overview.value.toString()
-    }
-
-    companion object {
-        const val CONFIRMED = 0
-        const val RECOVERED = 1
-        const val DEATH = 2
-    }
+//    companion object {
+//        const val CONFIRMED = 0
+//        const val RECOVERED = 1
+//        const val DEATH = 2
+//    }
 
 }
