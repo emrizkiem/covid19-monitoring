@@ -2,6 +2,7 @@
     <string name="app_name">Covid19</string>
 
     <string name="title_dashboard">Home</string>
+    <string name="title_globe">Global</string>
     <string name="title_explore">Explore</string>
     <string name="title_information">Info</string>
 

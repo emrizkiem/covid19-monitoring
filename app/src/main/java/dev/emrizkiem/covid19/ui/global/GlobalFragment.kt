@@ -1,4 +1,4 @@
-package dev.emrizkiem.covid19.ui.maps
+package dev.emrizkiem.covid19.ui.global
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -23,7 +23,7 @@ import kotlin.math.pow
 /**
  * A simple [Fragment] subclass.
  */
-class MapsFragment : Fragment(), OnMapReadyCallback {
+class GlobalFragment : Fragment(), OnMapReadyCallback {
 
     private val markers = mutableListOf<Marker>()
     private var mGoogleMap: GoogleMap? = null
@@ -42,7 +42,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_maps, container, false)
+        return inflater.inflate(R.layout.fragment_global, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -157,7 +157,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
 
         @JvmStatic
         fun newInstance(data: ArrayList<CovidDetail>, caseType: Int) =
-            MapsFragment().apply {
+            GlobalFragment().apply {
                 arguments = Bundle().apply {
                     putParcelableArrayList(DATA, data)
                     putInt(TYPE, caseType)

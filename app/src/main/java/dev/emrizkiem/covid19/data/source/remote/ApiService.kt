@@ -15,14 +15,14 @@ interface ApiService {
     @GET("api")
     suspend fun overview(): Response<CovidOverviewResponse>
 
-    @GET("api/confirmed")
-    suspend fun confirmed(): Response<CovidOverview>
-
-    @GET("api/deaths")
-    suspend fun deaths(): Response<CovidDetail>
-
-    @GET("api/recovered")
-    suspend fun recovered(): Response<CovidDetail>
+//    @GET("api/confirmed")
+//    suspend fun confirmed(): Response<CovidOverview>
+//
+//    @GET("api/deaths")
+//    suspend fun deaths(): Response<CovidDetail>
+//
+//    @GET("api/recovered")
+//    suspend fun recovered(): Response<CovidDetail>
 
     @GET("https://newsapi.org/v2/top-headlines")
     suspend fun explore(

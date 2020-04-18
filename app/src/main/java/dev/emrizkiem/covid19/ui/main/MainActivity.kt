@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentManager
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
 import dev.emrizkiem.covid19.R
 import dev.emrizkiem.covid19.ui.explore.ExploreFragment
+import dev.emrizkiem.covid19.ui.global.GlobalFragment
 import dev.emrizkiem.covid19.ui.home.HomeFragment
 import dev.emrizkiem.covid19.ui.information.InformationFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity() {
                 var fragment: Fragment? = null
                 when(id) {
                     R.id.navigation_dashboard -> fragment = HomeFragment()
+                    R.id.navigation_globe -> fragment = GlobalFragment()
                     R.id.navigation_explore -> fragment = ExploreFragment()
                     R.id.navigation_information -> fragment = InformationFragment()
                 }
