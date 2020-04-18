@@ -2,6 +2,7 @@ package dev.emrizkiem.covid19.data.source.remote
 
 import dev.emrizkiem.covid19.data.model.explore.ExploreResponse
 import dev.emrizkiem.covid19.data.model.home.CovidDetail
+import dev.emrizkiem.covid19.data.model.home.CovidOverview
 import dev.emrizkiem.covid19.data.model.home.CovidOverviewResponse
 import dev.emrizkiem.covid19.data.model.info.PreventionResponse
 import dev.emrizkiem.covid19.data.model.info.SymptomsResponse
@@ -15,13 +16,13 @@ interface ApiService {
     suspend fun overview(): Response<CovidOverviewResponse>
 
     @GET("api/confirmed")
-    suspend fun confirmed(): Call<CovidDetail>
+    suspend fun confirmed(): Response<CovidOverview>
 
     @GET("api/deaths")
-    suspend fun deaths(): Call<CovidDetail>
+    suspend fun deaths(): Response<CovidDetail>
 
     @GET("api/recovered")
-    suspend fun recovered(): Call<CovidDetail>
+    suspend fun recovered(): Response<CovidDetail>
 
     @GET("https://newsapi.org/v2/top-headlines")
     suspend fun explore(

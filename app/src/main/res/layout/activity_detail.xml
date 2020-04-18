@@ -10,7 +10,7 @@
     android:gravity="bottom"
     android:orientation="vertical"
     app:umanoPanelHeight="320dp"
-    sothree:umanoScrololableView="@+id/recycler_view"
+    sothree:umanoScrololableView="@+id/rv_location"
     sothree:umanoShadowHeight="0dp"
     tools:context=".ui.detail.DetailActivity">
 
@@ -55,7 +55,7 @@
             android:layout_marginLeft="@dimen/space_x2"
             android:layout_marginRight="@dimen/space_x2"
             android:layout_marginBottom="@dimen/space_x2"
-            android:background="@drawable/bg_rounded_grey_stroke"
+            android:background="@drawable/bg_stroke_rounded"
             android:gravity="center_vertical"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -76,15 +76,14 @@
                 android:background="@null"
                 android:fontFamily="@font/open_sans"
                 android:hint="@string/text_hint"
-                android:textAppearance="@style/TextAppearance.App.TextView.H5.White"
-                android:textColor="@color/white"
-                android:textColorHint="@color/cool_grey"
+                android:textColor="@color/textWhite"
+                android:textColorHint="@color/textGray"
                 android:textSize="@dimen/text_14" />
 
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
+            android:id="@+id/rv_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"/>

@@ -1,5 +1,6 @@
 package dev.emrizkiem.covid19.di
 
+import dev.emrizkiem.covid19.ui.detail.DetailViewModel
 import dev.emrizkiem.covid19.ui.explore.ExploreViewModel
 import dev.emrizkiem.covid19.ui.home.HomeViewModel
 import dev.emrizkiem.covid19.ui.information.InformationViewModel
@@ -10,4 +11,5 @@ fun viewModelModule() = module {
     viewModel { ExploreViewModel(get()) }
     viewModel { HomeViewModel(get()) }
     viewModel { InformationViewModel(get()) }
+    viewModel { DetailViewModel(get()) }
 }

@@ -14,7 +14,7 @@ class ExploreAdapter(
     private val listener: (ArticlesItem) -> Unit
 ): RecyclerView.Adapter<ExploreAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_explore, parent, false))
 
 
