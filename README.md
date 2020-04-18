@@ -1,7 +1,7 @@
 # Covid19
 This repository is simple covid19 data monitoring.
 
-![alt text](https://cdn.dribbble.com/users/3220087/screenshots/11058694/media/1351c5719f2550966062dc49e43dcd92.png)
+![alt text](https://cdn.dribbble.com/users/3220087/screenshots/11097448/media/c3f2b166c32031a3f2309b801664fae4.png)
 
 #### Sumber data : 
 - https://covid19.mathdro.id/api/
