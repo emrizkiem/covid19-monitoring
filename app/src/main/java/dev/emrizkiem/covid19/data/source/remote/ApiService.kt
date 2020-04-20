@@ -12,8 +12,8 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ApiService {
-    @GET("api/countries/indonesia")
-    suspend fun overview(): Response<CovidOverviewResponse>
+    @GET("https://indonesia-covid-19.mathdro.id/api/")
+    suspend fun overview(): Response<CovidOverview>
 
     @GET("https://newsapi.org/v2/top-headlines")
     suspend fun explore(

@@ -18,7 +18,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by viewModel()
-    private val list: ArrayList<CovidOverview> = ArrayList()
 
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?): View? {
@@ -34,12 +33,12 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if (activity != null) {
-//            layout_confirmed.setOnClickListener {
-//                activity?.let {
-//                    val intent = Intent(it, DetailActivity::class.java)
-//                    it.startActivity(intent)
-//                }
-//            }
+            text_see_detail.setOnClickListener {
+                activity?.let {
+                    val intent = Intent(it, DetailActivity::class.java)
+                    it.startActivity(intent)
+                }
+            }
 
             observeViewModel()
         }
@@ -50,30 +49,18 @@ class HomeFragment : Fragment() {
         homeViewModel.state.observe(this, Observer {
 
         })
-        homeViewModel.confirmed.observe(this, Observer {
-            it?.let { renderConfirmed(it) }
-        })
-        homeViewModel.recovered.observe(this, Observer {
-            it?.let { renderRecovered(it) }
-        })
-        homeViewModel.death.observe(this, Observer {
-            it?.let { renderDeath(it) }
+        homeViewModel.overview.observe(this, Observer {
+            it?.let { renderOverview(it) }
         })
         homeViewModel.error.observe(this, Observer {
             Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
         })
     }
 
-    private fun renderConfirmed(overview: CovidOverview) {
-        text_confirmed_home.text = overview.value.toString()
-    }
-
-    private fun renderRecovered(overview: CovidOverview) {
-        text_recovered_home.text = overview.value.toString()
-    }
-
-    private fun renderDeath(overview: CovidOverview) {
-        text_deaths_home.text = overview.value.toString()
+    private fun renderOverview(overview: CovidOverview) {
+        text_confirmed_home.text = overview.confirmed.toString()
+        text_deaths_home.text = overview.death.toString()
+        text_recovered_home.text = overview.recovered.toString()
     }
 
 }

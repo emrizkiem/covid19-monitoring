@@ -6,43 +6,13 @@ import dev.emrizkiem.covid19.util.ResultState
 import dev.emrizkiem.covid19.util.fetchState
 
 class HomeUseCase(private val repository: HomeRepository) {
-    suspend fun getConfirmed(): ResultState<CovidOverview> {
+    suspend fun getOverview(): ResultState<CovidOverview> {
         return fetchState {
             val response = repository.getOverview()
 
             when(response.code()) {
                 200 -> {
-                    ResultState.Success(response.body()?.confirmed)
-                }
-                else -> {
-                    ResultState.Error(response.message())
-                }
-            }
-        }
-    }
-
-    suspend fun getRecovered(): ResultState<CovidOverview> {
-        return fetchState {
-            val response = repository.getOverview()
-
-            when(response.code()) {
-                200 -> {
-                    ResultState.Success(response.body()?.recovered)
-                }
-                else -> {
-                    ResultState.Error(response.message())
-                }
-            }
-        }
-    }
-
-    suspend fun getDeath(): ResultState<CovidOverview> {
-        return fetchState {
-            val response = repository.getOverview()
-
-            when(response.code()) {
-                200 -> {
-                    ResultState.Success(response.body()?.deaths)
+                    ResultState.Success(response.body())
                 }
                 else -> {
                     ResultState.Error(response.message())

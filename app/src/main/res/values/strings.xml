@@ -7,12 +7,13 @@
     <string name="title_information">Info</string>
 
     <string name="caption_home">All you need\nis stay at home.</string>
-    <string name="caption_explore">Explore news\nAbout Covid-19</string>
-    <string name="caption_info">Get to know\nAbout Covid-19</string>
+    <string name="caption_explore">Explore news\nAbout Covid-19.</string>
+    <string name="caption_info">Get to know\nAbout Covid-19.</string>
+    <string name="caption_detail">Don\'t forget to\nuse a mask.</string>
     <string name="dash">-</string>
 
     <string name="text_h1_home">Case Update in Indonesia</string>
-    <string name="text_h2_home">Last update 18 April 2020</string>
+    <string name="text_h2_home">Total case in Indonesia today</string>
     <string name="text_h3_home">See details</string>
 
     <string name="statistic_confirmed">Confirmed</string>
@@ -26,7 +27,6 @@
     <string name="text_h3_info">Feel you have symptoms?</string>
     <string name="desc">Symptoms may appear\n2–14 days after exposure</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="icon_search">Icon search</string>
-    <string name="text_hint">Type city or province region ...</string>
+    <string name="text_h1_detail">Case Update</string>
+    <string name="text_h2_detail">The most recent case of COVID-19 in\nthe Indonesian Provinces.</string>
 </resources>

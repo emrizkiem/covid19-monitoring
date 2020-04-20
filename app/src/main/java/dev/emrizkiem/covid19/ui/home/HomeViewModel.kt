@@ -13,14 +13,8 @@ import kotlinx.coroutines.withContext
 
 class HomeViewModel(private val useCase: HomeUseCase) : ViewModel() {
 
-    private val _confirmed = MutableLiveData<CovidOverview>()
-    val confirmed: LiveData<CovidOverview> get() = _confirmed
-
-    private val _recovered = MutableLiveData<CovidOverview>()
-    val recovered: LiveData<CovidOverview> get() = _recovered
-
-    private val _death = MutableLiveData<CovidOverview>()
-    val death: LiveData<CovidOverview> get() = _death
+    private val _overview = MutableLiveData<CovidOverview>()
+    val overview: LiveData<CovidOverview> get() = _overview
 
     private val _state = MutableLiveData<Boolean>()
     val state: LiveData<Boolean> get() = _state
@@ -29,21 +23,19 @@ class HomeViewModel(private val useCase: HomeUseCase) : ViewModel() {
     val error: LiveData<String> get() = _error
 
     init {
-        getConfirmed()
-        getRecovered()
-        getDeath()
+        getOverview()
     }
 
-    private fun getDeath() {
+    private fun getOverview() {
         _state.value = true
         viewModelScope.launch(Dispatchers.Main) {
             val response = withContext(Dispatchers.IO) {
-                useCase.getDeath()
+                useCase.getOverview()
             }
 
             when(response) {
                 is ResultState.Success -> {
-                    _death.postValue(response.data)
+                    _overview.postValue(response.data)
                 }
                 is ResultState.Error -> {
                     _error.postValue(response.error)
@@ -53,41 +45,4 @@ class HomeViewModel(private val useCase: HomeUseCase) : ViewModel() {
         }
     }
 
-    private fun getRecovered() {
-        _state.value = true
-        viewModelScope.launch(Dispatchers.Main) {
-            val response = withContext(Dispatchers.IO) {
-                useCase.getRecovered()
-            }
-
-            when(response) {
-                is ResultState.Success -> {
-                    _recovered.postValue(response.data)
-                }
-                is ResultState.Error -> {
-                    _error.postValue(response.error)
-                }
-            }
-            _state.value = false
-        }
-    }
-
-    private fun getConfirmed() {
-        _state.value = true
-        viewModelScope.launch(Dispatchers.Main) {
-            val response = withContext(Dispatchers.IO) {
-                useCase.getConfirmed()
-            }
-
-            when(response) {
-                is ResultState.Success -> {
-                    _confirmed.postValue(response.data)
-                }
-                is ResultState.Error -> {
-                    _error.postValue(response.error)
-                }
-            }
-            _state.value = false
-        }
-    }
 }
