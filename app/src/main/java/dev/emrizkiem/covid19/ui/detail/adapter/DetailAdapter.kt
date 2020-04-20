@@ -8,37 +8,32 @@ import dev.emrizkiem.covid19.R
 import dev.emrizkiem.covid19.data.model.home.CovidDetail
 import dev.emrizkiem.covid19.util.CaseType
 import dev.emrizkiem.covid19.util.Number
+import kotlinx.android.synthetic.main.item_detail.view.*
 
 class DetailAdapter(
-    private val caseType: Int,
-    private val listener: (data: CovidDetail) -> Unit
+    private val data: List<CovidDetail>
 ): RecyclerView.Adapter<DetailAdapter.ViewHolder>() {
 
-    private val items = mutableListOf<CovidDetail>()
-
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
         fun bind(item: CovidDetail) {
             with(itemView) {
-
+                text_province.text = item.province
+                text_confirmed_detail.text = item.confirmed.toString()
+                text_deaths_detail.text = item.death.toString()
+                text_recovered_detail.text = item.recovered.toString()
             }
         }
 
-    }
-
-    private fun getColorText(status: Int) = when (status) {
-        CaseType.RECOVERED -> R.color.textRecovered
-        CaseType.DEATHS -> R.color.textDeath
-        else -> R.color.textConfirmed
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.item_detail, parent, false)
     )
 
-    override fun getItemCount() = items.size
+    override fun getItemCount() = data.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(items[holder.adapterPosition])
+        holder.bind(data[position])
     }
 }

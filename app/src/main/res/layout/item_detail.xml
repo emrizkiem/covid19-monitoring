@@ -4,8 +4,6 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginStart="12dp"
-    android:layout_marginEnd="12dp"
     android:orientation="vertical"
     app:cardCornerRadius="20dp"
     app:cardElevation="4dp"
@@ -98,7 +96,7 @@
             app:layout_constraintTop_toTopOf="@+id/view4" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_deaths_home"
+            android:id="@+id/text_deaths_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -111,7 +109,7 @@
             android:text="@string/dash" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_confirmed_home"
+            android:id="@+id/text_confirmed_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16sp"
@@ -124,7 +122,7 @@
             android:text="@string/dash" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_recovered_home"
+            android:id="@+id/text_recovered_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16sp"
@@ -146,9 +144,9 @@
             android:textColor="@color/textGray"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/text_deaths_home"
-            app:layout_constraintStart_toStartOf="@+id/text_deaths_home"
-            app:layout_constraintTop_toBottomOf="@+id/text_deaths_home" />
+            app:layout_constraintEnd_toEndOf="@+id/text_deaths_detail"
+            app:layout_constraintStart_toStartOf="@+id/text_deaths_detail"
+            app:layout_constraintTop_toBottomOf="@+id/text_deaths_detail" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
@@ -160,9 +158,9 @@
             android:textColor="@color/textGray"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/text_confirmed_home"
-            app:layout_constraintStart_toStartOf="@+id/text_confirmed_home"
-            app:layout_constraintTop_toBottomOf="@+id/text_confirmed_home" />
+            app:layout_constraintEnd_toEndOf="@+id/text_confirmed_detail"
+            app:layout_constraintStart_toStartOf="@+id/text_confirmed_detail"
+            app:layout_constraintTop_toBottomOf="@+id/text_confirmed_detail" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
@@ -174,9 +172,9 @@
             android:textColor="@color/textGray"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/text_recovered_home"
-            app:layout_constraintStart_toStartOf="@+id/text_recovered_home"
-            app:layout_constraintTop_toBottomOf="@+id/text_recovered_home" />
+            app:layout_constraintEnd_toEndOf="@+id/text_recovered_detail"
+            app:layout_constraintStart_toStartOf="@+id/text_recovered_detail"
+            app:layout_constraintTop_toBottomOf="@+id/text_recovered_detail" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

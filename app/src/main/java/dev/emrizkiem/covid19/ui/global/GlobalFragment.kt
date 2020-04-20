@@ -30,7 +30,7 @@ class GlobalFragment : Fragment(), OnMapReadyCallback {
     private var pulseCircle: Circle? = null
 
     private val detailData by lazy {
-        arguments?.getParcelableArrayList<CovidDetail>(DATA).orEmpty()
+       // arguments?.getParcelableArrayList<CovidDetail>(DATA).orEmpty()
     }
 
     private val caseType by lazy {
@@ -63,87 +63,32 @@ class GlobalFragment : Fragment(), OnMapReadyCallback {
         )
 
         moveCamera(LatLng(LAT_DEFAULT, LONG_DEFAULT))
-        initMarker()
+       // initMarker()
     }
 
-    private fun initMarker() {
-        mGoogleMap?.clear()
-        markers.clear()
-        detailData.forEach {
-            val marker = mGoogleMap?.addMarker(
-                MarkerOptions().position(LatLng(it.lat, it.long))
-                    .title(it.locationName)
-                    .icon(BitmapDescriptorFactory.fromResource(
-                        when(caseType) {
-                            CaseType.DEATHS -> R.drawable.ic_marker_death
-                            CaseType.RECOVERED -> R.drawable.ic_marker_recovered
-                            else -> R.drawable.ic_marker_confirmed
-                        }
-                    ))
-            )
-            marker?.let { m -> markers.add(m) }
-        }
-    }
+//    private fun initMarker() {
+//        mGoogleMap?.clear()
+//        markers.clear()
+//        detailData.forEach {
+//            val marker = mGoogleMap?.addMarker(
+//                MarkerOptions().position(LatLng(it.lat, it.long))
+//                    .title(it.locationName)
+//                    .icon(BitmapDescriptorFactory.fromResource(
+//                        when(caseType) {
+//                            CaseType.DEATHS -> R.drawable.ic_marker_death
+//                            CaseType.RECOVERED -> R.drawable.ic_marker_recovered
+//                            else -> R.drawable.ic_marker_confirmed
+//                        }
+//                    ))
+//            )
+//            marker?.let { m -> markers.add(m) }
+//        }
+//    }
 
     private fun moveCamera(latLng: LatLng) {
         mGoogleMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 4f))
     }
 
-    fun selectItem(data: CovidDetail) {
-        mGoogleMap?.let {
-            moveCamera(LatLng(data.lat, data.long))
-            startPulsAnimation(LatLng(data.lat, data.long))
-        }
-    }
-
-    private val valueAnimator by lazy {
-        ValueAnimator.ofFloat(
-            0f,
-            calculatePulseRadius(mGoogleMap?.cameraPosition?.zoom ?: 4f).apply { }
-        ).apply {
-            startDelay = 100
-            duration = 800
-            interpolator = AccelerateDecelerateInterpolator()
-        }
-    }
-
-    private fun calculatePulseRadius(zoomLevel: Float): Float {
-        return 2.0.pow(16 - zoomLevel.toDouble()).toFloat() * 160
-    }
-
-    private fun startPulsAnimation(latLng: LatLng) {
-        valueAnimator?.apply {
-            removeAllUpdateListeners()
-            removeAllListeners()
-            end()
-        }
-
-        pulseCircle?.remove()
-        pulseCircle = mGoogleMap?.addCircle(
-            CircleOptions().center(
-                latLng
-            ).radius(0.0).strokeWidth(0f)
-        )
-
-        valueAnimator.addUpdateListener {
-            pulseCircle?.fillColor = when (caseType) {
-                CaseType.RECOVERED -> RECOVERED_COLOR
-                CaseType.DEATHS -> DEATH_COLOR
-                else -> CONFIRMED_COLOR
-
-            }
-            pulseCircle?.radius = (valueAnimator.animatedValue as Float).toDouble()
-        }
-
-        valueAnimator.addListener(object : AnimatorListenerAdapter() {
-            override fun onAnimationEnd(animation: Animator?) {
-                valueAnimator.startDelay = 100
-                valueAnimator.start()
-            }
-        })
-
-        valueAnimator.start()
-    }
 
     companion object {
         private val RECOVERED_COLOR = Color.argb(70, 0, 204, 153)
@@ -155,14 +100,14 @@ class GlobalFragment : Fragment(), OnMapReadyCallback {
         private const val DATA = "data"
         private const val TYPE = "type"
 
-        @JvmStatic
-        fun newInstance(data: ArrayList<CovidDetail>, caseType: Int) =
-            GlobalFragment().apply {
-                arguments = Bundle().apply {
-                    putParcelableArrayList(DATA, data)
-                    putInt(TYPE, caseType)
-                }
-            }
+//        @JvmStatic
+//        fun newInstance(data: ArrayList<CovidDetail>, caseType: Int) =
+//            GlobalFragment().apply {
+//                arguments = Bundle().apply {
+//                    putParcelableArrayList(DATA, data)
+//                    putInt(TYPE, caseType)
+//                }
+//            }
     }
 
 }
