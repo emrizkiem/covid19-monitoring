@@ -41,45 +41,39 @@ class HomeFragment : Fragment() {
 //                }
 //            }
 
-//            observeViewModel()
+            observeViewModel()
         }
     }
 
-//    @SuppressLint("FragmentLiveDataObserve")
-//    private fun observeViewModel() {
-//        homeViewModel.state.observe(this, Observer {
-//
-//        })
-//        homeViewModel.confirmed.observe(this, Observer {
-//            it?.let { renderConfirmed(it) }
-//        })
-//        homeViewModel.recovered.observe(this, Observer {
-//            it?.let { renderRecovered(it) }
-//        })
-//        homeViewModel.death.observe(this, Observer {
-//            it?.let { renderDeath(it) }
-//        })
-//        homeViewModel.error.observe(this, Observer {
-//            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
-//        })
-//    }
+    @SuppressLint("FragmentLiveDataObserve")
+    private fun observeViewModel() {
+        homeViewModel.state.observe(this, Observer {
 
-//    private fun renderConfirmed(overview: CovidOverview) {
-//        text_confirmed.text = overview.value.toString()
-//    }
-//
-//    private fun renderRecovered(overview: CovidOverview) {
-//        text_recovered.text = overview.value.toString()
-//    }
-//
-//    private fun renderDeath(overview: CovidOverview) {
-//        text_death.text = overview.value.toString()
-//    }
+        })
+        homeViewModel.confirmed.observe(this, Observer {
+            it?.let { renderConfirmed(it) }
+        })
+        homeViewModel.recovered.observe(this, Observer {
+            it?.let { renderRecovered(it) }
+        })
+        homeViewModel.death.observe(this, Observer {
+            it?.let { renderDeath(it) }
+        })
+        homeViewModel.error.observe(this, Observer {
+            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+        })
+    }
 
-//    companion object {
-//        const val CONFIRMED = 0
-//        const val RECOVERED = 1
-//        const val DEATH = 2
-//    }
+    private fun renderConfirmed(overview: CovidOverview) {
+        text_confirmed_home.text = overview.value.toString()
+    }
+
+    private fun renderRecovered(overview: CovidOverview) {
+        text_recovered_home.text = overview.value.toString()
+    }
+
+    private fun renderDeath(overview: CovidOverview) {
+        text_deaths_home.text = overview.value.toString()
+    }
 
 }

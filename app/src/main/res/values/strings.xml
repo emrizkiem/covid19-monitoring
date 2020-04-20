@@ -9,6 +9,7 @@
     <string name="caption_home">All you need\nis stay at home.</string>
     <string name="caption_explore">Explore news\nAbout Covid-19</string>
     <string name="caption_info">Get to know\nAbout Covid-19</string>
+    <string name="dash">-</string>
 
     <string name="text_h1_home">Case Update in Indonesia</string>
     <string name="text_h2_home">Last update 18 April 2020</string>

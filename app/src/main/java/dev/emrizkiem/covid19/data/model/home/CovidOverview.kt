@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 
 data class CovidOverview (
     @Expose @SerializedName("value") val value: Int = 0,
-    @Expose @SerializedName("detail") val detail: List<CovidDetail>? = null
+    @Expose @SerializedName("detail") val detail: String? = null
 )
