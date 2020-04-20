@@ -8,7 +8,6 @@ import dev.emrizkiem.covid19.R
 import dev.emrizkiem.covid19.data.model.home.CovidDetail
 import dev.emrizkiem.covid19.util.CaseType
 import dev.emrizkiem.covid19.util.Number
-import kotlinx.android.synthetic.main.item_location.view.*
 
 class DetailAdapter(
     private val caseType: Int,
@@ -21,16 +20,7 @@ class DetailAdapter(
 
         fun bind(item: CovidDetail) {
             with(itemView) {
-                text_location.text = item.locationName
-                text_data.text = when(caseType) {
-                    CaseType.RECOVERED -> "Recovered ${Number.numberFormat(item.recovered)}"
-                    CaseType.DEATHS -> "Deaths ${Number.numberFormat(item.deaths)}"
-                    else -> "Confirmed ${Number.numberFormat(item.confirmed)}"
-                }
-                text_data.setTextColor(resources.getColor(getColorText(caseType)))
-                text_information.text = "Last update ${Number.formatTime(item.lastUpdate)}"
 
-                setOnClickListener { listener.invoke(item) }
             }
         }
 
@@ -43,7 +33,7 @@ class DetailAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.item_location, parent, false)
+        LayoutInflater.from(parent.context).inflate(R.layout.item_detail, parent, false)
     )
 
     override fun getItemCount() = items.size

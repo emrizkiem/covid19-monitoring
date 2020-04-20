@@ -29,4 +29,5 @@
 
     <string name="text_h1_detail">Case Update</string>
     <string name="text_h2_detail">The most recent case of COVID-19 in\nthe Indonesian Provinces.</string>
+    <string name="item_province">Province</string>
 </resources>
