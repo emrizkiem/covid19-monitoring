@@ -31,10 +31,6 @@ class GlobalViewModel(
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> get() = _error
 
-//    init {
-//        getOverviewGlobal()
-//    }
-
     fun getDataWithLocation() {
         viewModelScope.launch {
             repository.loadOverview()
@@ -68,43 +64,5 @@ class GlobalViewModel(
                 }
         }
     }
-
-//    private fun getOverviewGlobal() {
-//        _state.value = true
-//        viewModelScope.launch(Dispatchers.Main) {
-//            val response = withContext(Dispatchers.IO) {
-//                useCase.getOverviewGlobal()
-//            }
-//
-//            when(response) {
-//                is ResultState.Success -> {
-//                    _overview.postValue(response.data)
-//                }
-//                is ResultState.Error -> {
-//                    _error.postValue(response.error)
-//                }
-//            }
-//            _state.value = false
-//        }
-//    }
-
-//    fun getLocation() {
-//        _state.value = true
-//        viewModelScope.launch(Dispatchers.Main) {
-//            val response = withContext(Dispatchers.IO) {
-//                useCase.getLocation()
-//            }
-//
-//            when(response) {
-//                is ResultState.Success -> {
-//                    _location.postValue(response.data)
-//                }
-//                is ResultState.Error -> {
-//                    _error.postValue(response.error)
-//                }
-//            }
-//            _state.value = false
-//        }
-//    }
 
 }

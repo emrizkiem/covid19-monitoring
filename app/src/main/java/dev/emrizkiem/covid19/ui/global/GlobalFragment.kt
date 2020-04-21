@@ -1,16 +1,11 @@
 package dev.emrizkiem.covid19.ui.global
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
-import android.animation.ValueAnimator
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.os.Bundle
 import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -20,15 +15,11 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import dev.emrizkiem.covid19.R
-import dev.emrizkiem.covid19.data.model.global.Data
 import dev.emrizkiem.covid19.data.model.global.DataResponse
 import dev.emrizkiem.covid19.data.model.global.Location
-import dev.emrizkiem.covid19.data.model.home.CovidDetail
-import dev.emrizkiem.covid19.util.CaseType
 import kotlinx.android.synthetic.main.fragment_global.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import kotlin.math.pow
 
 /**
  * A simple [Fragment] subclass.

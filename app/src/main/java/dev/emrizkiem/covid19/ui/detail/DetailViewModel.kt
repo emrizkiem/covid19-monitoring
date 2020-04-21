@@ -26,7 +26,7 @@ class DetailViewModel(private val useCase: HomeUseCase): ViewModel() {
         getDetail()
     }
 
-    private fun getDetail() {
+    fun getDetail() {
         _state.value = true
         viewModelScope.launch(Dispatchers.Main) {
             val response = withContext(Dispatchers.IO) {
