@@ -3,21 +3,28 @@ package dev.emrizkiem.covid19.ui.global
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AccelerateDecelerateInterpolator
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import dev.emrizkiem.covid19.R
+import dev.emrizkiem.covid19.data.model.global.Data
+import dev.emrizkiem.covid19.data.model.global.DataResponse
 import dev.emrizkiem.covid19.data.model.home.CovidDetail
 import dev.emrizkiem.covid19.util.CaseType
+import kotlinx.android.synthetic.main.fragment_global.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlin.math.pow
 
 /**
@@ -25,17 +32,8 @@ import kotlin.math.pow
  */
 class GlobalFragment : Fragment(), OnMapReadyCallback {
 
-    private val markers = mutableListOf<Marker>()
     private var mGoogleMap: GoogleMap? = null
-    private var pulseCircle: Circle? = null
-
-    private val detailData by lazy {
-       // arguments?.getParcelableArrayList<CovidDetail>(DATA).orEmpty()
-    }
-
-    private val caseType by lazy {
-        arguments?.getInt(TYPE) ?: CaseType.CONFIRMED
-    }
+    private val viewModel: GlobalViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,6 +49,24 @@ class GlobalFragment : Fragment(), OnMapReadyCallback {
             .findFragmentById(R.id.fragment_map) as SupportMapFragment
 
         mapFragment.getMapAsync(this)
+        observeViewModel()
+    }
+
+    @SuppressLint("FragmentLiveDataObserve")
+    private fun observeViewModel() {
+        viewModel.state.observe(this, Observer {  })
+        viewModel.overview.observe(this, Observer {
+            it?.let { renderOverviewGlobal(it) }
+        })
+        viewModel.error.observe(this, Observer {
+            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+        })
+    }
+
+    private fun renderOverviewGlobal(overview: DataResponse) {
+        text_confirmed_global.text = overview.confirmed?.value.toString()
+        text_deaths_global.text = overview.deaths?.value.toString()
+        text_recovered_global.text = overview.recovered?.value.toString()
     }
 
     override fun onMapReady(p0: GoogleMap?) {
@@ -63,27 +79,7 @@ class GlobalFragment : Fragment(), OnMapReadyCallback {
         )
 
         moveCamera(LatLng(LAT_DEFAULT, LONG_DEFAULT))
-       // initMarker()
     }
-
-//    private fun initMarker() {
-//        mGoogleMap?.clear()
-//        markers.clear()
-//        detailData.forEach {
-//            val marker = mGoogleMap?.addMarker(
-//                MarkerOptions().position(LatLng(it.lat, it.long))
-//                    .title(it.locationName)
-//                    .icon(BitmapDescriptorFactory.fromResource(
-//                        when(caseType) {
-//                            CaseType.DEATHS -> R.drawable.ic_marker_death
-//                            CaseType.RECOVERED -> R.drawable.ic_marker_recovered
-//                            else -> R.drawable.ic_marker_confirmed
-//                        }
-//                    ))
-//            )
-//            marker?.let { m -> markers.add(m) }
-//        }
-//    }
 
     private fun moveCamera(latLng: LatLng) {
         mGoogleMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 4f))
@@ -99,15 +95,6 @@ class GlobalFragment : Fragment(), OnMapReadyCallback {
         private const val LONG_DEFAULT = 114.8260094
         private const val DATA = "data"
         private const val TYPE = "type"
-
-//        @JvmStatic
-//        fun newInstance(data: ArrayList<CovidDetail>, caseType: Int) =
-//            GlobalFragment().apply {
-//                arguments = Bundle().apply {
-//                    putParcelableArrayList(DATA, data)
-//                    putInt(TYPE, caseType)
-//                }
-//            }
     }
 
 }
