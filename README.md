@@ -1,11 +1,12 @@
 # Covid19
 This repository is simple covid19 data monitoring.
 
-![alt text](https://cdn.dribbble.com/users/3220087/screenshots/11097448/media/c3f2b166c32031a3f2309b801664fae4.png)
+![alt text](https://cdn.dribbble.com/users/3220087/screenshots/11115774/media/8ec755cadc30da2d55acc64540159a87.png)
 
 #### Sumber data : 
 - https://covid19.mathdro.id/api/
 - https://newsapi.org/v2/
+- https://indonesia-covid-19.mathdro.id/api/
 
 ### Tech Stack
 1. MVVM
