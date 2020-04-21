@@ -2,7 +2,6 @@ package dev.emrizkiem.covid19.util
 
 import dev.emrizkiem.covid19.data.model.global.DataResponse
 import dev.emrizkiem.covid19.data.model.global.Location
-import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 

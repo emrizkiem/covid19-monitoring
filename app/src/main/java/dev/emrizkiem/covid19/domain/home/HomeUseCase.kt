@@ -1,7 +1,6 @@
 package dev.emrizkiem.covid19.domain.home
 
 import dev.emrizkiem.covid19.data.model.home.CovidDetail
-import dev.emrizkiem.covid19.data.model.home.CovidDetailResponse
 import dev.emrizkiem.covid19.data.model.home.CovidOverview
 import dev.emrizkiem.covid19.data.repository.home.HomeRepository
 import dev.emrizkiem.covid19.util.ResultState

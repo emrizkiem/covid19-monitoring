@@ -6,10 +6,7 @@ import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
-import androidx.core.view.isGone
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,7 +14,6 @@ import dev.emrizkiem.covid19.R
 import dev.emrizkiem.covid19.data.model.info.Prevention
 import dev.emrizkiem.covid19.data.model.info.Symptoms
 import dev.emrizkiem.covid19.ui.information.adapter.InformationAdapter
-import kotlinx.android.synthetic.main.fragment_explore.*
 import kotlinx.android.synthetic.main.fragment_information.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import uz.jamshid.library.progress_bar.CircleProgressBar

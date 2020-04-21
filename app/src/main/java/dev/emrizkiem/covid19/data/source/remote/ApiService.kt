@@ -10,7 +10,6 @@ import dev.emrizkiem.covid19.data.model.info.SymptomsResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
-import java.net.URL
 
 interface ApiService {
     @GET("https://indonesia-covid-19.mathdro.id/api/")

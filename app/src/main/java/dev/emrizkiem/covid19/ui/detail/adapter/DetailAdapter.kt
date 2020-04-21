@@ -6,8 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import dev.emrizkiem.covid19.R
 import dev.emrizkiem.covid19.data.model.home.CovidDetail
-import dev.emrizkiem.covid19.util.CaseType
-import dev.emrizkiem.covid19.util.Number
 import kotlinx.android.synthetic.main.item_detail.view.*
 
 class DetailAdapter(

@@ -10,5 +10,4 @@ fun useCaseModule() = module {
     factory { ExploreUseCase(get()) }
     factory { HomeUseCase(get()) }
     factory { InfoUseCase(get()) }
-    factory { GlobalUseCase(get()) }
 }

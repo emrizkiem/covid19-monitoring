@@ -1,6 +1,5 @@
 package dev.emrizkiem.covid19.util
 
-import dev.emrizkiem.covid19.data.model.home.CovidOverview
 import java.net.ConnectException
 
 suspend fun <T: Any> fetchState(call: suspend () -> ResultState<T>): ResultState<T> {

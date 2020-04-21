@@ -4,10 +4,12 @@ import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
 import dev.emrizkiem.covid19.di.Modules
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 
+@ExperimentalCoroutinesApi
 class AppController: Application() {
     override fun onCreate() {
         super.onCreate()

@@ -4,14 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import dev.emrizkiem.covid19.R
 import dev.emrizkiem.covid19.data.model.info.Prevention
 import dev.emrizkiem.covid19.data.model.info.Symptoms
 import dev.emrizkiem.covid19.ui.information.viewholder.PreventionViewHolder
 import dev.emrizkiem.covid19.ui.information.viewholder.SymptomsViewHolder
-import kotlinx.android.synthetic.main.item_symptoms.view.*
-import java.lang.IllegalArgumentException
 
 class InformationAdapter(
     private val data: List<Any>

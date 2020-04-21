@@ -2,23 +2,20 @@ package dev.emrizkiem.covid19.ui.global
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations.map
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import dev.emrizkiem.covid19.data.model.global.CaseUpdate
 import dev.emrizkiem.covid19.data.model.global.DataResponse
 import dev.emrizkiem.covid19.data.model.global.Location
-import dev.emrizkiem.covid19.data.repository.global.GlobalRepositoryImpl
-import dev.emrizkiem.covid19.domain.global.GlobalUseCase
+import dev.emrizkiem.covid19.data.repository.global.GlobalRepository
 import dev.emrizkiem.covid19.util.Mapper
-import dev.emrizkiem.covid19.util.ResultState
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 
 @ExperimentalCoroutinesApi
 class GlobalViewModel(
-    private val repository: GlobalRepositoryImpl,
+    private val repository: GlobalRepository,
     private val mapper: Mapper
 ) : ViewModel() {
 
