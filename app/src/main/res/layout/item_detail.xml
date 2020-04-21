@@ -18,6 +18,7 @@
             android:id="@+id/item_province"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/open_sans_light"
             android:text="@string/item_province"
             android:textColor="@color/textGray"

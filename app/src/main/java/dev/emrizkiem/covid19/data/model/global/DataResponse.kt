@@ -7,5 +7,5 @@ data class DataResponse (
     @Expose @SerializedName("confirmed") val confirmed: Data? = null,
     @Expose @SerializedName("deaths") val deaths: Data? = null,
     @Expose @SerializedName("recovered") val recovered: Data? = null,
-    @Expose @SerializedName("lastUpdate") val lastUpdate: String? = null
+    @Expose @SerializedName("lastUpdate") var lastUpdate: String? = null
 )
