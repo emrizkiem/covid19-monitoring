@@ -49,7 +49,7 @@ class GlobalFragment : Fragment(), OnMapReadyCallback {
 
     @SuppressLint("FragmentLiveDataObserve")
     private fun observeViewModel() {
-        viewModel.state.observe(this, Observer {  })
+        viewModel.state.observe(this, Observer { })
         viewModel.overview.observe(this, Observer {
             renderOverviewGlobal(it)
         })
@@ -96,6 +96,7 @@ class GlobalFragment : Fragment(), OnMapReadyCallback {
         mGoogleMap?.setOnMapClickListener { onMapClick() }
 
         viewModel.getDataWithLocation()
+        viewModel.getLocationGlobal()
         moveCamera(LatLng(LAT_DEFAULT, LONG_DEFAULT))
     }
 
@@ -123,7 +124,8 @@ class GlobalFragment : Fragment(), OnMapReadyCallback {
     private fun renderCaseUpdateLocationMarker(location: Location) {
         val latLng = LatLng(location.lat ?: 0.0, location.long ?: 0.0)
 
-        val snippets = "${location.confirmed}::${location.deaths}::${location.recovered}::${location.readableLastUpdate}"
+        val snippets =
+            "${location.confirmed}::${location.deaths}::${location.recovered}::${location.readableLastUpdate}"
 
         mGoogleMap?.addMarker(
             MarkerOptions()
