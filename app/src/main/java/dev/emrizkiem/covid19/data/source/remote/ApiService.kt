@@ -22,7 +22,7 @@ interface ApiService {
     suspend fun globalOverview(): Response<DataResponse>
 
     @GET("api/confirmed")
-    suspend fun location(): Response<Location>
+    suspend fun location(): Response<List<Location>>
 
     @GET("https://newsapi.org/v2/top-headlines")
     suspend fun explore(

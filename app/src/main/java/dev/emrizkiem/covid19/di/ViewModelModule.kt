@@ -15,5 +15,5 @@ fun viewModelModule() = module {
     viewModel { HomeViewModel(get()) }
     viewModel { InformationViewModel(get()) }
     viewModel { DetailViewModel(get()) }
-    viewModel { GlobalViewModel(get(), get()) }
+    viewModel { GlobalViewModel(get()) }
 }
