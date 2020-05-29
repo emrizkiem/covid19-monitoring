@@ -6,5 +6,4 @@ import org.koin.dsl.module
 
 fun networkModule() = module {
     single { ApiConfig.createNetworkApi() }
-    single { DataSource() }
 }
