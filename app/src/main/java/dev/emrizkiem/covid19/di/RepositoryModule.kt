@@ -8,7 +8,6 @@ import dev.emrizkiem.covid19.data.repository.home.HomeRepository
 import dev.emrizkiem.covid19.data.repository.home.HomeRepositoryImpl
 import dev.emrizkiem.covid19.data.repository.info.InfoRepository
 import dev.emrizkiem.covid19.data.repository.info.InfoRepositoryImpl
-import dev.emrizkiem.covid19.util.Mapper
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.dsl.module
 
@@ -18,5 +17,4 @@ fun repositoryModule() = module {
     single<HomeRepository> { HomeRepositoryImpl(get()) }
     single<InfoRepository> { InfoRepositoryImpl(get()) }
     single<GlobalRepository> { GlobalRepositoryImpl(get()) }
-    single { Mapper() }
 }
